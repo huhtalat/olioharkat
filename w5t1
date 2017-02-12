@@ -1,0 +1,224 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Viikko5harkat
+    //tehtävä1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Kulkuneuvo aa = new Kulkuneuvo();
+            aa.Nimi = "Lada";
+            aa.Malli = CarType.auto;
+
+            for (int i = 0; i < aa.Tires.Count; i++)
+            {
+                aa.Tires[i].Merkki = "Nokia";
+                aa.Tires[i].Tyyppi = "Hakkapeliitta";
+                aa.Tires[i].Rengaskoko = 205;
+            }
+            Kulkuneuvo pp = new Kulkuneuvo();
+            pp.Nimi = "Hannunbaikki";
+            pp.Malli = CarType.pyora;
+
+            for (int i = 0; i < pp.Tires.Count; i++)
+            {
+                pp.Tires[i].Merkki = "Jopo";
+                pp.Tires[i].Tyyppi = "Jopo Super";
+                pp.Tires[i].Rengaskoko = 50;
+            }
+            Kulkuneuvo vv = new Kulkuneuvo();
+            vv.Nimi = "Speden Super";
+            vv.Malli = CarType.vene;
+
+            for (int i = 0; i < vv.Tires.Count; i++)
+            {
+                vv.Tires[i].Merkki = "-";
+                vv.Tires[i].Tyyppi = "-";
+                vv.Tires[i].Rengaskoko = 0;
+            }
+
+            Console.WriteLine("Vechicle Name:" + aa.Nimi + " Model:" + aa.Malli);
+            Console.WriteLine("Tyres:");
+            //Console.WriteLine("- Name: " + aa.Tires[i].Merkki + " Model:" + aa.Tires[i].Tyyppi + "TyreSize: " + aa.Tires[i].Rengaskoko);
+            Console.WriteLine("Vechicle Name:" + pp.Nimi + " Model:" + pp.Malli);
+            Console.WriteLine("Tyres:");
+            //Console.WriteLine("- Name: " + pp.Tires[i].Merkki + " Model:" + pp.Tires[i].Tyyppi + "TyreSize: " + pp.Tires[i].Rengaskoko);
+            Console.WriteLine("Vechicle Name:" + vv.Nimi + " Model:" + vv.Malli);
+            Console.WriteLine("Tyres:");
+            //Console.WriteLine("- Name: " + vv.Tires[i].Merkki + " Model:" + vv.Tires[i].Tyyppi + "TyreSize: " + vv.Tires[i].Rengaskoko);
+        }
+        //tulostuksen kanssa ongelmia
+        /* void TulostaKulkuneuvo()
+        {
+        Console.WriteLine("Vechicle Name:" + Nimi + " Model:" + malli);
+        Console.WriteLine("Tyres:");
+
+        for (int i = 0; i < tires.Count; i++)
+        {
+            Console.WriteLine("- Name: " + tires[i].Nimi + " Model:" + tires[i].Merkki + "TyreSize: " + tires[i].Size);
+        }
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Viikko5harkat
+//tehtava1
+{
+    public enum CarType
+    {
+        auto, pyora, vene,
+    }
+
+    class Kulkuneuvo
+    {
+        string model;
+        string nimi;
+        CarType malli;
+        List<Rengas> tires;
+        public string Nimi
+        {
+            get
+            {
+                return nimi;
+            }
+
+            set
+            {
+                nimi = value;
+            }
+        }
+
+        public CarType Malli
+        {
+            get
+            {
+                return malli;
+            }
+
+            set
+            {
+                malli = value;
+
+                InitializeTires();
+            }
+        }
+
+        internal List<Rengas> Tires
+        {
+            get
+            {
+                return tires;
+            }
+
+            set
+            {
+                tires = value;
+            }
+        }
+
+        public string Model
+        {
+            get
+            {
+                return model;
+            }
+
+            set
+            {
+                model = value;
+            }
+        }
+
+        public void InitializeTires()
+        {
+            tires = new List<Rengas>();
+            int num;
+            switch(malli)
+            {
+                case CarType.auto:
+                    num = 4;
+                    break;
+                case CarType.pyora:
+                    num = 2;
+                    break;
+                case CarType.vene:
+                    num = 0;
+                    break;
+                default:
+                    num = 0;
+                    break;
+            }
+            for (int i = 0; i < num; i++)
+            {
+                Rengas temp = new Rengas();
+                Tires.Add(temp);
+            }
+        }
+    }
+}
+
+        } */
+    }
+}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Viikko5harkat
+    //tehtävä1
+{
+    class Rengas
+    {
+        string merkki;
+        string tyyppi;
+        double rengaskoko;
+
+        public string Merkki
+        {
+            get
+            {
+                return merkki;
+            }
+
+            set
+            {
+                merkki = value;
+            }
+        }
+
+        public string Tyyppi
+        {
+            get
+            {
+                return tyyppi;
+            }
+
+            set
+            {
+                tyyppi = value;
+            }
+        }
+
+        public double Rengaskoko
+        {
+            get
+            {
+                return rengaskoko;
+            }
+
+            set
+            {
+                rengaskoko = value;
+            }
+        }
+    }
+}
